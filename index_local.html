@@ -22,20 +22,28 @@
           arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 
           <!-- Paris, 76 bd Voltaire -->
-          <a-box
+          <!-- <a-box
               color="yellow"
               rotation="0 0 0"
               scale="2 2 2"
               gps-entity-place="longitude: 2.373923; latitude: 48.86088;">
-          </box>
+          </box> -->
 
           <a-entity
+              gltf-model="./assets/essaiGLTF.glb"
+              rotation="0 180 0"
+              scale="1 1 1"
+              gps-entity-place="longitude: 2.373923; latitude: 48.86088;"
+              animation-mixer>
+          </a-entity>
+
+          <!-- <a-entity
               gltf-model="./assets/Parrot.glb"
               rotation="0 180 0"
               scale="2 2 2"
               gps-entity-place="longitude: 2.373953; latitude: 48.86095;"
               animation-mixer>
-          </a-entity>
+          </a-entity> -->
 
           <a-entity
               gltf-model="./assets/Flamingo.glb"
@@ -53,6 +61,16 @@
               gps-entity-place="longitude: 2.267340; latitude: 48.819620;"
               animation-mixer>
           </a-entity>
+
+          <a-entity
+              gltf-model="./assets/Parrot.glb"
+              rotation="0 180 0"
+              scale="2 2 2"
+              gps-entity-place="longitude: 2.267360; latitude: 48.819627;"
+              animation-mixer>
+          </a-entity>
+
+
 
         <a-camera gps-camera rotation-reader></a-camera>
 	</a-scene>
