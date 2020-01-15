@@ -1,38 +1,23 @@
 // https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html
 let somePlaces = [
   {
-    name: 'Square Republique Montreuil',
-    lonlat: [2.424212, 48.853061],
-    scale: 3,
-  },
-  {
-    name: 'Joseph Home',
-    lonlat: [2.425162, 48.853178],
-    scale: 3,
-  },
-  {
-    name: 'Etienne Veranda',
-    lonlat: [2.373893, 48.860812],
-    scale: 3,
-  },
-  {
     name: 'ENSAAMA DSACOM',
-    lonlat: [2.295264, 48.833733],
+    location: [2.295264, 48.833733],
     scale: 3,
   },
   {
     name: 'ENSAAMA cour centrale',
-    lonlat: [2.295328, 48.833342],
+    location: [2.295328, 48.833342],
     scale: 3,
   },
 ]
 
 let etiennePlaces = [
-  { lonlat:[2.295307, 48.833190] },
-  { lonlat:[2.295618, 48.833346] },
-  { lonlat:[2.295012, 48.833399] },
-  { lonlat:[2.295270, 48.833720] },
-  { lonlat:[2.295298, 48.833338] },
+  [2.295307, 48.833190],
+  [2.295618, 48.833346],
+  [2.295012, 48.833399],
+  [2.295270, 48.833720],
+  [2.295298, 48.833338],
 ]
 
 function init() {
@@ -59,32 +44,28 @@ function init() {
   map.addLayer(markers)
 
   // for (let place of somePlaces) {
-  //   let position = new OpenLayers.LonLat(...place.lonlat).transform( fromProjection, toProjection)
+  //   let position = new OpenLayers.LonLat(...place.location).transform( fromProjection, toProjection)
   //   markers.addMarker(new OpenLayers.Marker(position))
   // }
 
   for (let place of etiennePlaces) {
-    let position = new OpenLayers.LonLat(...place.lonlat).transform(fromProjection, toProjection)
+    let position = new OpenLayers.LonLat(...place).transform( fromProjection, toProjection)
     markers.addMarker(new OpenLayers.Marker(position))
   }
-
-  followUser({ markers, fromProjection, toProjection })
-
+follow();
 }
 
-function followUser({ markers, fromProjection, toProjection }) {
+function follow() {
 
   function success(pos) {
-
     let { longitude, latitude } = pos.coords
-    console.log(`user position: (${longitude.toFixed(6)}, ${latitude.toFixed(6)})`)
 
     // http://dev.openlayers.org/docs/files/OpenLayers/Marker-js.html
     let size = new OpenLayers.Size(21,25)
     let offset = new OpenLayers.Pixel(-(size.w/2), -size.h)
     let icon = new OpenLayers.Icon('img/marker-green.png', size, offset)
 
-    let position = new OpenLayers.LonLat(longitude, latitude).transform(fromProjection, toProjection)
+    let position = new OpenLayers.LonLat(longitude, latitude).transform( fromProjection, toProjection)
     markers.addMarker(new OpenLayers.Marker(position, icon))
   }
 
