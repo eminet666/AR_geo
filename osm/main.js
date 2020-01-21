@@ -1,21 +1,6 @@
 // https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html
 let somePlaces = [
   {
-    name: 'Square Republique Montreuil',
-    lonlat: [2.424212, 48.853061],
-    scale: 3,
-  },
-  {
-    name: 'Joseph Home',
-    lonlat: [2.425162, 48.853178],
-    scale: 3,
-  },
-  {
-    name: 'Etienne Veranda',
-    lonlat: [2.373893, 48.860812],
-    scale: 3,
-  },
-  {
     name: 'ENSAAMA DSACOM',
     lonlat: [2.295264, 48.833733],
     scale: 3,
@@ -28,11 +13,17 @@ let somePlaces = [
 ]
 
 let etiennePlaces = [
-  { lonlat:[2.295307, 48.833190] },
-  { lonlat:[2.295618, 48.833346] },
-  { lonlat:[2.295012, 48.833399] },
-  { lonlat:[2.295270, 48.833720] },
-  { lonlat:[2.295298, 48.833338] },
+  { lonlat:[2.295307, 48.833190] }, // cour angle Sud-Est
+  { lonlat:[2.295618, 48.833346] }, // cour angle Nord-Est
+  { lonlat:[2.295012, 48.833399] }, // hall
+  { lonlat:[2.295270, 48.833720] }, // Violette = terrasse 107
+  { lonlat:[2.295298, 48.833338] }, // centre cour
+  { lonlat:[2.295176, 48.833534] }, // Chloé : palier relation internationales
+  { lonlat:[2.295488, 48.833449] }, // couloir devant 108
+  { lonlat:[2.295284, 48.833466] }, // cage escalier principal
+  { lonlat:[2.294903, 48.833488] }, // pont
+  { lonlat:[2.295354, 48.833618] }, // Milène = salle 107
+  { lonlat:[2.295085, 48.833255] }, // couloir Sud
 ]
 
 function init() {
